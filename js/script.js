@@ -13,3 +13,11 @@ for (const collection of collections) {
     document.getElementById("existing_Hearts_num").innerText = count;
   });
 }
+// coins and call section starts
+const callsBtns = document.getElementsByClassName("call_btn");
+
+for (const callBtn of callsBtns) {
+  callBtn.addEventListener("click", function () {
+    alert("what happenning");
+  });
+}
