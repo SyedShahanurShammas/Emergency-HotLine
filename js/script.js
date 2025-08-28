@@ -51,3 +51,30 @@ document
     const container = document.getElementById("container-history");
     container.innerText = "";
   });
+// copy btns
+let copies = parseInt(getTextById("existing_copies"));
+const copyBtns = document.getElementsByClassName("copy_btn");
+for (const copyBtn of copyBtns) {
+  copyBtn.addEventListener("click", function () {
+    copies++;
+    document.getElementById("existing_copies").innerText = copies;
+
+    // copy
+    copyBtn.addEventListener("click", (e) => {
+      const btn = e.target.closest(".copy-btn"); // works even if icon is clicked
+      if (!btn) return;
+
+      const card = btn.closest(".card"); // find the correct card
+      if (!card) return;
+
+      const textEl = card.querySelector(".copy-text"); // text to copy
+      if (!textEl) return;
+
+      const text = textEl.innerText;
+      navigator.clipboard
+        .writeText(text)
+        .then(() => alert("Copied: " + text))
+        .catch(() => alert("Copy failed!"));
+    });
+  });
+}

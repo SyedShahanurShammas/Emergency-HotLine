@@ -13,6 +13,13 @@ function callBtnFunctionality(num, subTitle, title) {
     );
     return;
   }
+  // time
+  let now = new Date();
+  let time = now.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+  });
 
   const div = document.createElement("div");
   const container = document.getElementById("container-history");
@@ -21,10 +28,10 @@ function callBtnFunctionality(num, subTitle, title) {
             class="min-h-5 my-3 p-2 flex justify-between items-center bg-[#FAFAFA] rounded-lg"
             >
             <div class="">
-              <h1 class="text-[18px] font-semibold">${title1}</h1>
+              <h1 class="text-[18px] font-bold">${title1}</h1>
               <h1 class="text-[#5C5C5C] font-normal text-[18px]">${num1}</h1>
             </div>
-            <p>${new Date().toLocaleTimeString()}</p>
+            <p class="w-[95px]">${time}</p>
           </div>
   `;
   container.appendChild(div);
