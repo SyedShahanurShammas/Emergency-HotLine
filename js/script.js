@@ -13,38 +13,38 @@ for (const collection of collections) {
     document.getElementById("existing_Hearts_num").innerText = count;
   });
 }
-
+// get the coins by id
 let coins = parseInt(getTextById("coins-number"));
+// cards
 document.getElementById("cardBtn1").addEventListener("click", function () {
-  const num1 = getTextById("service-number1");
-  const subTitle1 = getTextById("card-subTitle1");
-  const title = getTextById("card-title1");
-  coins = coins - 20;
-  if (coins < 0) {
-    alert(
-      "You Don't Have sufficient Coins to call.You need At least 20 coins to call"
-    );
-    return;
-  }
-
-  const div = document.createElement("div");
-  const container = document.getElementById("container-history");
-  div.innerHTML = `
-      <div
-            class="min-h-5 my-3 p-2 flex justify-between items-center bg-[#FAFAFA] rounded-lg"
-            >
-            <div class="">
-              <h1 class="text-[18px] font-semibold">${title}</h1>
-              <h1 class="text-[#5C5C5C] font-normal text-[18px]">${num1}</h1>
-            </div>
-            <p>${new Date().toLocaleTimeString()}</p>
-          </div>
-  `;
-  container.appendChild(div);
-  // show alert
-  // alert(`Calling ${subTitle1} ${num1}...`);
-  document.getElementById("coins-number").innerText = coins;
+  callBtnFunctionality("service-number1", "card-subTitle1", "card-title1");
 });
+document.getElementById("cardBtn2").addEventListener("click", function () {
+  callBtnFunctionality("service-number2", "card-subTitle2", "card-title2");
+});
+document.getElementById("cardBtn3").addEventListener("click", function () {
+  callBtnFunctionality("service-number3", "card-subTitle3", "card-title3");
+});
+document.getElementById("cardBtn4").addEventListener("click", function () {
+  callBtnFunctionality("service-number4", "card-subTitle4", "card-title4");
+});
+document.getElementById("cardBtn5").addEventListener("click", function () {
+  callBtnFunctionality("service-number5", "card-subTitle5", "card-title5");
+});
+document.getElementById("cardBtn6").addEventListener("click", function () {
+  callBtnFunctionality("service-number6", "card-subTitle6", "card-title6");
+});
+document.getElementById("cardBtn7").addEventListener("click", function () {
+  callBtnFunctionality("service-number7", "card-subTitle7", "card-title7");
+});
+document.getElementById("cardBtn8").addEventListener("click", function () {
+  callBtnFunctionality("service-number8", "card-subTitle8", "card-title8");
+});
+document.getElementById("cardBtn9").addEventListener("click", function () {
+  callBtnFunctionality("service-number9", "card-subTitle9", "card-title9");
+});
+
+// clear the history button
 document
   .getElementById("clearHistoryBtn")
   .addEventListener("click", function () {
