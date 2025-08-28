@@ -61,15 +61,9 @@ for (const copyBtn of copyBtns) {
 
     // copy
     copyBtn.addEventListener("click", (e) => {
-      const btn = e.target.closest(".copy-btn"); // works even if icon is clicked
-      if (!btn) return;
-
-      const card = btn.closest(".card"); // find the correct card
-      if (!card) return;
-
-      const textEl = card.querySelector(".copy-text"); // text to copy
-      if (!textEl) return;
-
+      const btn = e.target.closest(".copy_btn"); // works even if icon is clicked
+      const card = btn.closest(".cards"); // find the correct card
+      const textEl = card.querySelector(".service-number"); // text to copy
       const text = textEl.innerText;
       navigator.clipboard
         .writeText(text)
